@@ -9,27 +9,16 @@
       "role": "Maintainer"
     }
   ],
-  "repositories": {
-    "drupal": {
-      "type": "composer",
-      "url": "https://packages.drupal.org/8"
-    },
-    "asset-packagist": {
-      "type": "composer",
-      "url": "https://asset-packagist.org"
-    }
-  },
   "require": {
     "acquia/blt": "^12",
+    "acquia/blt-phpcs": "^1.0",
     "acquia/lightning": "^5",
-    "composer/installers": "^1.2",
+    "composer/installers": "^1.9",
     "cweagans/composer-patches": "^1.6",
     "drupal/core-composer-scaffold": "^9",
     "drupal/core-recommended": "^9",
-    "drupal/mysql56": "^1.0@beta"
+    "drupal/mysql56": "^1.0"
   },
-  "minimum-stability": "dev",
-  "prefer-stable": true,
   "config": {
     "sort-packages": true
   },
@@ -52,6 +41,7 @@
       },
       "gitignore": true
     },
+    "enable-patching": true,
     "installer-paths": {
       "docroot/core": [
         "type:drupal-core"
@@ -84,11 +74,21 @@
       "bower-asset",
       "npm-asset"
     ],
-    "enable-patching": true,
     "patchLevel": {
       "drupal/core": "-p2"
     },
     "patches": {}
-  }
-
+  },
+  "repositories": {
+    "drupal": {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    },
+    "asset-packagist": {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
