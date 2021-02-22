@@ -19,8 +19,8 @@ From your terminal, go to the directory where you have cloned the repo and enter
 fin init
 ```
 
-A `composer.lock` file and a `salt.txt` file will be generated. These files should be committed to your repository.
-When complete, you can access the site by running:
+A `composer.lock` file and a `salt.txt` file will be generated. These files, along with the docroot directory
+should be committed to your repository. When complete, you can access the site by running:
 
 ```
 fin drush uli
