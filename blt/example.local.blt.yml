@@ -1,0 +1,12 @@
+project:
+  machine_name: BLTed
+  human_name: 'BLTed 12'
+  local:
+    hostname: '${env.VIRTUAL_HOST}'
+drupal:
+  db:
+    database: default
+    username: '${env.MYSQL_USER}'
+    password: '${env.MYSQL_PASSWORD}'
+    host: db
+    port: 3306
