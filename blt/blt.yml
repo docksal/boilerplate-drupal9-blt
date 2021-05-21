@@ -1,4 +1,4 @@
 project:
   machine_name: BLTed
   profile:
-    name: lightning
+    name: minimal
