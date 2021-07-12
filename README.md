@@ -48,7 +48,6 @@ BLT uses a number of configuration (.yml or .json) files to define and customize
 
 * blt/blt.yml (formerly blt/project.yml prior to BLT 9.x)
 * blt/local.blt.yml
-* box/config.yml (if using Drupal VM)
 * drush/sites (contains Drush aliases for this project)
 * composer.json (includes required components, including Drupal Modules, for this project)
 
@@ -59,32 +58,27 @@ BLT uses a number of configuration (.yml or .json) files to define and customize
 * [Docksal Documentation](http://docs.docksal.io)
 * [Docksal GitHub](https://github.com/docksal/docksal)
 
-This project includes the following packages and configuration:
-* Drupal core
-* [Acquia BLT](https://github.com/acquia/blt) (Development and automation toolset)
-* [Acquia Lightning](https://github.com/acquia/lightning) (Drupal distribution)
-* [Drush](https://github.com/drush-ops/drush) (Drupal CLI and development tool, via Lightning)
-* [Acquia Connector](https://drupal.org/project/acquia_connector) (Management and reporting tool for Acquia Cloud sites, via Lightning)
-* [Asset Packagist](https://asset-packagist.org/) repository, package, and configuration (via Lightning)
-
-
-Acquia Drupal Recommended Project
+Acquia Drupal Minimal Project
 ====
 
-This is a project template providing a great out-of-the-box experience for new Drupal 9 projects hosted on Acquia. It is based on the [Drupal Recommended Project](https://github.com/drupal/recommended-project/tree/9.0.x) and similar to the [Acquia Drupal Minimal Project](https://github.com/acquia/drupal-minimal-project), with the principal difference being the addition of several modules and packages that provide the best possible out-of-the-box experience for Acquia customers.
+This is a project template providing a minimal Drupal 9 project hosted on Acquia. It is based on the
+[Drupal Recommended Project](https://github.com/drupal/recommended-project/tree/9.0.x) and similar to the
+[Acquia Drupal Recommended Project](https://github.com/acquia/drupal-recommended-project), with the principal difference
+being the addition of several modules and packages that provide the best possible out-of-the-box experience for Acquia customers.
 
 This project includes the following packages and configuration:
 * Drupal core
 * [Acquia BLT](https://github.com/acquia/blt) (Development and automation toolset)
-* [Acquia Lightning](https://github.com/acquia/lightning) (Drupal distribution)
-* [Drush](https://github.com/drush-ops/drush) (Drupal CLI and development tool, via Lightning)
-* [Acquia Connector](https://drupal.org/project/acquia_connector) (Management and reporting tool for Acquia Cloud sites, via Lightning)
-* [Asset Packagist](https://asset-packagist.org/) repository, package, and configuration (via Lightning)
+* [Drush](https://github.com/drush-ops/drush) (Drupal CLI and development tool)
+* [Acquia Connector](https://drupal.org/project/acquia_connector) (Management and reporting tool for Acquia Cloud sites)
+* [Asset Packagist](https://asset-packagist.org/) repository, package, and configuration
 
 
-Once you create the project, you can and should customize `composer.json` and the rest of the project to suit your needs. You will receive updates from any dependent packages, but not from the project template itself. It's yours to keep!
+Once you create the project, you can and should customize `composer.json` and the rest of the project to suit your needs.
+You will receive updates from any dependent packages, but not from the project template itself. It's yours to keep!
 
-For instance, you can remove a provided package by running the following command and committing the changed `composer.json` and `composer.lock` to Git:
+For instance, you can remove a provided package by running the following command and committing the changed
+`composer.json` and `composer.lock` to Git:
 ```
 composer remove acquia/blt
 ```
@@ -97,4 +91,4 @@ This program is free software: you can redistribute it and/or modify it under th
 
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 
-**BLT v12.0.0**
+**BLT v13.0.0**
