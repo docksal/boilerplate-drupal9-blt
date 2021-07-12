@@ -16,7 +16,7 @@
         }
     },
     "require": {
-        "acquia/blt": "^12",
+        "acquia/blt": "^13",
         "acquia/blt-phpcs": "^1.0",
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.6",
