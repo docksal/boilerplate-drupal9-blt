@@ -27,12 +27,45 @@ echo-green () { echo -e "${green}$1${NC}"; }
 echo-green-bg () { echo -e "${green_bg}$1${NC}"; }
 echo-yellow () { echo -e "${yellow}$1${NC}"; }
 
+# Copy a settings file.
+# Skips if the destination file already exists.
+# @param $1 source file
+# @param $2 destination file
+copy_settings_file()
+{
+	local source="$1"
+	local dest="$2"
+
+	if [[ (-f $dest) || (-d $dest) ]]; then
+		echo-yellow "${dest} already in place."
+	elif [[ -d $source ]]; then
+		echo "Copying to ${dest}..."
+		cp -r $source $dest
+    else
+        echo "Copying to ${dest}..."
+		cp $source $dest
+	fi
+}
+
 #-------------------------- END: Helper Functions --------------------------------
+
+#-------------------------- Functions --------------------------------
+
+# Initialize local settings files
+init_local_settings ()
+{
+  copy_settings_file "${PROJECT_ROOT}/blt/example.local.blt.yml" "${PROJECT_ROOT}/blt/local.blt.yml"
+}
+
+#-------------------------- END: Functions --------------------------------
 
 #-------------------------- Execution --------------------------------
 
 # Initialize stack
 fin project start
+
+#Initialize local settings
+init_local_settings
 
 # Install project requirements
 fin exec composer clear-cache
