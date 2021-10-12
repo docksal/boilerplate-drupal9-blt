@@ -9,6 +9,7 @@ env:
 
 jobs:
   install:
+    name: Verify boilerplate installs
     runs-on: ubuntu-20.04
     steps:
       - name: Install Docksal
