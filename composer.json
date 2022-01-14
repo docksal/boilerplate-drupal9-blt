@@ -1,11 +1,11 @@
 {
-    "name": "acquia/drupal-minimal-project",
+    "name": "docksal/boilerplate-drupal9-blt",
     "description": "Minimal Acquia-compatible Drupal application based on the Drupal Recommended Project",
     "license": "GPL-2.0-or-later",
     "authors": [
         {
-            "name": "Acquia Engineering",
-            "homepage": "https://www.acquia.com",
+            "name": "Docksal",
+            "homepage": "https://docksal.io",
             "role": "Maintainer"
         }
     ],
