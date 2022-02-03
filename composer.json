@@ -13,6 +13,10 @@
         "drupal": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        "asset-packagist": {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
         }
     },
     "require": {
@@ -23,7 +27,8 @@
         "drupal/core-composer-scaffold": "^9",
         "drupal/core-recommended": "^9",
         "drupal/mysql56": "^1.0",
-        "drush/drush": "^10.3"
+        "drush/drush": "^10.3",
+        "oomphinc/composer-installers-extender": "^1.1 || ^2"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -59,10 +64,15 @@
                 "type:drupal-core"
             ],
             "docroot/libraries/{$name}": [
-                "type:drupal-library"
+                "type:drupal-library",
+                "type:bower-asset",
+                "type:npm-asset"
             ],
             "docroot/modules/contrib/{$name}": [
                 "type:drupal-module"
+            ],
+            "docroot/modules/custom/{$name}": [
+                "type:drupal-custom-module"
             ],
             "docroot/profiles/contrib/{$name}": [
                 "type:drupal-profile"
@@ -70,16 +80,17 @@
             "docroot/themes/contrib/{$name}": [
                 "type:drupal-theme"
             ],
-            "drush/Commands/contrib/{$name}": [
-                "type:drupal-drush"
-            ],
-            "docroot/modules/custom/{$name}": [
-                "type:drupal-custom-module"
-            ],
             "docroot/themes/custom/{$name}": [
                 "type:drupal-custom-theme"
+            ],
+            "drush/Commands/contrib/{$name}": [
+                "type:drupal-drush"
             ]
         },
+        "installer-types": [
+            "bower-asset",
+            "npm-asset"
+        ],
         "enable-patching": true,
         "patchLevel": {
             "drupal/core": "-p2"
