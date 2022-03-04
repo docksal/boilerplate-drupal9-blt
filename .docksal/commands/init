@@ -39,6 +39,13 @@ fin exec composer clear-cache --no-interaction
 fin exec COMPOSER_PROCESS_TIMEOUT=2000
 fin exec COMPOSER_MEMORY_LIMIT=-1 composer install --no-interaction
 
+# Allow exiting to configure project before install.
+read -p "Do you want to run BLT setup (y/n)?" -n 1 -r
+if [[ ! $REPLY =~ ^[Yy]$ ]]
+then
+    exit 1
+fi
+
 # Set up blt
 cd $DOCROOT_PATH
 fin blt setup --no-interaction

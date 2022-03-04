@@ -8,7 +8,7 @@ install:
 - fin sysinfo
 
 before_script:
-- fin init
+- echo y | fin init
 
 script:
 - fin test
