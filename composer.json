@@ -41,6 +41,11 @@
                     "mode": "replace",
                     "overwrite": false,
                     "path": "docroot/core/assets/scaffold/files/default.settings.php"
+                },
+                "[web-root]/sites/default/settings/local.settings.php": {
+                    "mode": "replace",
+                    "path": ".docksal/settings/default.local.settings.php",
+                    "overwrite": false
                 }
             },
             "gitignore": true,
