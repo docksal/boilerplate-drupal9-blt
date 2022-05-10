@@ -1,24 +1,18 @@
 #!/usr/bin/env bash
 
-## Run blt setup commands to prepare your local site for
-## development.
+## Initialize stack and site (full reset)
 ##
 ## Usage: fin init
 
 # Abort if anything fails
 set -e
-#-------------------------- Settings --------------------------------
-
-DOCROOT_PATH="${PROJECT_ROOT}/${DOCROOT}"
-
-#-------------------------- END: Settings --------------------------------
 
 #-------------------------- Helper functions --------------------------------
 
 # Console colors
 red='\033[0;31m'
 green='\033[0;32m'
-green_bg='\033[42m'
+green_bg='\033[1;97;42m'
 yellow='\033[1;33m'
 NC='\033[0m'
 
@@ -27,23 +21,15 @@ echo-green () { echo -e "${green}$1${NC}"; }
 echo-green-bg () { echo -e "${green_bg}$1${NC}"; }
 echo-yellow () { echo -e "${yellow}$1${NC}"; }
 
-#-------------------------- END: Helper Functions --------------------------------
-
 #-------------------------- Execution --------------------------------
 
-# Initialize stack
-fin reset -f
+# Stack initialization
+echo -e "${green_bg} Step 1 ${NC}${green} Initializing stack...${NC}"
+fin project reset -f
 
-# Install project requirements
-fin exec composer clear-cache --no-interaction
-fin exec COMPOSER_PROCESS_TIMEOUT=2000
-fin exec COMPOSER_MEMORY_LIMIT=-1 composer install --no-interaction
+# Site initialization
+echo -e "${green_bg} Step 2 ${NC}${green} Initializing site...${NC}"
+# This runs inside cli using http://docs.docksal.io/en/v1.4.0/fin/custom-commands/#executing-commands-inside-cli
+fin init-site
 
-# Set up blt
-cd $DOCROOT_PATH
-fin blt setup --no-interaction
-
-echo
-echo -en "${green_bg} DONE! ${NC}"
-echo
-echo -e "Open ${yellow}http://${VIRTUAL_HOST}${NC} in your browser to verify the setup."
+echo -e "${green_bg} DONE! ${NC}${green} Completed all initialization steps.${NC}"
