@@ -48,8 +48,8 @@ blt_setup ()
 	# Allow exiting to configure project before install.
 	echo
 	echo-yellow "Going to run BLT setup..."
-	echo -e "Press ${yellow}Ctrl+C${NC} if you want to make changes to ${yellow}bly.yml${NC}."
-	echo -e "After configuring your ${yellow}bly.yml${NC}, run ${yellow}fin blt setup${NC} to complete your setup."
+	echo -e "Press ${yellow}Ctrl+C${NC} if you want to make changes to ${yellow}blt.yml${NC}."
+	echo -e "After configuring your ${yellow}blt.yml${NC}, run ${yellow}fin blt setup${NC} to complete your setup."
 	echo
 	sleep 30
 
