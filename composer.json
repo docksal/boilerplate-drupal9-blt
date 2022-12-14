@@ -21,8 +21,13 @@
     "config": {
         "allow-plugins": {
             "composer/installers": true,
+            "acquia/blt": true,
+            "acquia/blt-phpcs": true,
             "cweagans/composer-patches": true,
-            "drupal/core-composer-scaffold": true
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "drupal/core-composer-scaffold": true,
+            "oomphinc/composer-installers-extender": true,
+            "ergebnis/composer-normalize": true
         },
         "platform": {
             "php": "7.4"
@@ -91,6 +96,7 @@
         },
         "patches": {},
         "violinist": {
+            "allow_update_indirect_with_direct": 1,
             "allow_updates_beyond_constraint": 0,
             "blocklist": [
                 "drupal/core-composer-scaffold"
